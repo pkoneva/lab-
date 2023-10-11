@@ -2,33 +2,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
 using namespace std;
 ifstream fin;
 ofstream fout;
-
-//enum States
-//{
-//	Start,
-//	End,
-//	Skip
-//};
-//enum Events
-//{
-//	Sign,
-//	Unknown
-//};
-//class DKA {
-//
-//	States Scurr, Snext;
-//	Events e;
-//public:
-//	DKA() {
-//
-//	}
-//	bool AddTransition(States from, Events val, States to) {
-//
-//	};
-//};
 
 struct TableElem {
 	int curr;
@@ -88,22 +65,3 @@ public:
 		delete(Table);
 	}
 };
-
-
-int main() {
-	int N, k, f, p, T;
-	char val;
-	string s;
-
-
-
-
-
-
-
-
-
-	fin.close();
-	fout.close();
-	return 0;
-}
