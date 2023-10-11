@@ -25,7 +25,7 @@ public:
 class Variable : public Expression {
 	char c;
 public:
-	Variable() { throw "Введите переменную"; }
+	Variable() { throw "Г‚ГўГҐГ¤ГЁГІГҐ ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ"; }
 	Variable(char x) { c = x; }
 	Expression* diff() { return new Number(1); }
 	void print() { fout << this->c; }
@@ -34,7 +34,7 @@ public:
 class Add : public Expression {
 	Expression* e1, * e2;
 public:
-	Add() { throw "Введите выражение"; }
+	Add() { throw "Г‚ГўГҐГ¤ГЁГІГҐ ГўГ»Г°Г Г¦ГҐГ­ГЁГҐ"; }
 	Add(Expression* a, Expression* b) {
 		e1 = a; e2 = b;
 	}
@@ -53,7 +53,7 @@ public:
 class Sub : public Expression {
 	Expression* e1, * e2;
 public:
-	Sub() { throw "Введите выражение"; }
+	Sub() { throw "Г‚ГўГҐГ¤ГЁГІГҐ ГўГ»Г°Г Г¦ГҐГ­ГЁГҐ"; }
 	Sub(Expression* a, Expression* b) {
 		e1 = a; e2 = b;
 	}
@@ -72,7 +72,7 @@ public:
 class Mul : public Expression {
 	Expression* e1, * e2;
 public:
-	Mul() { throw "Введите выражение"; }
+	Mul() { throw "Г‚ГўГҐГ¤ГЁГІГҐ ГўГ»Г°Г Г¦ГҐГ­ГЁГҐ"; }
 	Mul(Expression* a, Expression* b) {
 		e1 = a; e2 = b;
 	}
@@ -91,7 +91,7 @@ public:
 class Div : public Expression {
 	Expression* e1, * e2;
 public:
-	Div() { throw "Введите выражение"; }
+	Div() { throw "Г‚ГўГҐГ¤ГЁГІГҐ ГўГ»Г°Г Г¦ГҐГ­ГЁГҐ"; }
 	Div(Expression* a, Expression* b) {
 		e1 = a; e2 = b;
 	}
@@ -197,7 +197,7 @@ void Stack::composite() {
 	if (st_oper.top== NULL) return;
 	int zn = priority_znak(st_oper.p_Pop());
 	if (zn == -1) return;
-	Expression* e2 = st_expr.e_Pop();// выталкивается в обратном порядке
+	Expression* e2 = st_expr.e_Pop();// ГўГ»ГІГ Г«ГЄГЁГўГ ГҐГІГ±Гї Гў Г®ГЎГ°Г ГІГ­Г®Г¬ ГЇГ®Г°ГїГ¤ГЄГҐ
 	Expression* e1 = st_expr.e_Pop();
 	Expression* res = NULL;
 	switch (zn) {
@@ -236,7 +236,7 @@ Expression* Stack::create() {
 			}
 			en = new Number(num);
 			st_expr.e_Push(en);
-			int long_file = fin.tellg(); //считан лишний символ, необходимо передвинуть текущую позицию на 1 байт назад
+			int long_file = fin.tellg(); //Г±Г·ГЁГІГ Г­ Г«ГЁГёГ­ГЁГ© Г±ГЁГ¬ГўГ®Г«, Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г® ГЇГҐГ°ГҐГ¤ГўГЁГ­ГіГІГј ГІГҐГЄГіГ№ГіГѕ ГЇГ®Г§ГЁГ¶ГЁГѕ Г­Г  1 ГЎГ Г©ГІ Г­Г Г§Г Г¤
 			fin.seekg(long_file-1, ios_base::beg);
 		}
 		else if (Perem(c) == 1) {
