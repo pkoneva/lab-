@@ -135,10 +135,10 @@ class HashMap {
 	int size = 3;
 	Ordered_List<K, T>* table;
 	
-	float loadFactor = 0.75; //коэффициент загрузки
+	float loadFactor = 0.75; //ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІ Г§Г ГЈГ°ГіГ§ГЄГЁ
 public:
 	float limitElem = size * loadFactor;
-	int full = 0; //предельное количество элементов, при достижении которого увеличиваем хэштаблицу
+	int full = 0; //ГЇГ°ГҐГ¤ГҐГ«ГјГ­Г®ГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў, ГЇГ°ГЁ Г¤Г®Г±ГІГЁГ¦ГҐГ­ГЁГЁ ГЄГ®ГІГ®Г°Г®ГЈГ® ГіГўГҐГ«ГЁГ·ГЁГўГ ГҐГ¬ ГµГЅГёГІГ ГЎГ«ГЁГ¶Гі
 	void function();
 	HashMap() {
 		full = 0;
@@ -184,8 +184,8 @@ public:
 		delete(table);
 	}
 		
-	//шаблон итератора из библиотеки
-	 class iterator :public std:: iterator<input_iterator_tag,  //тип итератора из библиотеки
+	//ГёГ ГЎГ«Г®Г­ ГЁГІГҐГ°Г ГІГ®Г°Г  ГЁГ§ ГЎГЁГЎГ«ГЁГ®ГІГҐГЄГЁ
+	 class iterator :public std:: iterator<input_iterator_tag,  //ГІГЁГЇ ГЁГІГҐГ°Г ГІГ®Г°Г  ГЁГ§ ГЎГЁГЎГ«ГЁГ®ГІГҐГЄГЁ
 		HashMap<K, T>, ptrdiff_t, HashMap<K, T>*, HashMap<K, T>&> {
 
 		HashMap<K, T>* ht;
@@ -219,8 +219,8 @@ public:
 			for (j = i; j < ht->size; j++)
 				if (!ht->table[j].Empty())
 				{
-					currList = &ht->table[j];//следующий непсутой список
-					ind = j;//и его номер
+					currList = &ht->table[j];//Г±Г«ГҐГ¤ГіГѕГ№ГЁГ© Г­ГҐГЇГ±ГіГІГ®Г© Г±ГЇГЁГ±Г®ГЄ
+					ind = j;//ГЁ ГҐГЈГ® Г­Г®Г¬ГҐГ°
 					return;
 				}
 			
@@ -281,7 +281,7 @@ template <typename K, typename T> void HashMap<K, T>::function() {
 	int N;
 	char command;
 	fin >> N;
-	int count_rise = 0;//количество расширений хэш-таблиц
+	int count_rise = 0;//ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г°Г Г±ГёГЁГ°ГҐГ­ГЁГ© ГµГЅГё-ГІГ ГЎГ«ГЁГ¶
 	for (int i = 0; i < N; i++) {
 		fin >> command;
 		if (command == 'A') {
@@ -296,7 +296,7 @@ template <typename K, typename T> void HashMap<K, T>::function() {
 	if (full == 0) {
 		fout << full << " " << full; return;
 	}
-	//подсчёт количества элементов
+	//ГЇГ®Г¤Г±Г·ВёГІ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ  ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў
 	iterator it = begin();
 	iterator iend = end();
 	int n = 0;
@@ -307,7 +307,7 @@ template <typename K, typename T> void HashMap<K, T>::function() {
 		n++;
 	}
 	fout << n << " ";
-	//подсчёт количества различных значений
+	//ГЇГ®Г¤Г±Г·ВёГІ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ  Г°Г Г§Г«ГЁГ·Г­Г»Гµ Г§Г­Г Г·ГҐГ­ГЁГ©
 	if (n == 0) {
 		fout << n; return;
 	}
